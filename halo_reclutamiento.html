@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro UNSC - Universo Halo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Rajdhani:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar idéntico a tus otras páginas -->
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="index.html">HALO ARCHIVES</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="halo_combat_evolved.html">Halo CE</a></li>
+        <li><a href="halo_2.html">Halo 2</a></li>
+        <li><a href="halo_3.html">Halo 3</a></li>
+        <li><a href="halo_3:_ODST.html">Halo 3:ODST</a></li>
+        <li><a href="halo_reach.html">Halo Reach</a></li>
+        <li><a href="halo_4.html">Halo 4</a></li>
+        <li><a href="halo_5_guardians.html">Halo 5: Guardians</a></li>
+        <li><a href="halo_infinite.html">Halo Infinite</a></li>
+        <li><a href="halo_campaign_evolved.html">Halo Campaign Evolved</a></li>
+        <li><a href="halo_reclutamiento.html">Reclutamiento</a></li>
+      </ul>
+    </nav>
+
+    <h1>REGISTRO DE VISITANTES Y EXPEDIENTE SPARTAN</h1>
+    <h2>
+      Únete a los archivos de la UNSC y comparte tu experiencia en el campo de
+      batalla
+    </h2>
+
+    <div class="card">
+      <h3 class="card-title">Formulario de Reclutamiento</h3>
+
+      <form action="#" method="POST" class="form-container">
+        <!-- Campo: Nombre / GamerTag -->
+        <div class="form-group">
+          <label for="nombre">Nombre completo / Gamertag:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Ej. Chief_117"
+            required
+          />
+        </div>
+
+        <!-- Campo: Correo Electrónico -->
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="usuario@unsc.com"
+            required
+          />
+        </div>
+
+        <!-- Radio Buttons: ¿Has jugado a Halo? -->
+        <div class="form-group">
+          <label class="section-label"
+            >¿Has jugado alguna vez a la saga Halo?</label
+          >
+          <div class="options-group">
+            <label class="option-item">
+              <input
+                type="radio"
+                name="jugado_halo"
+                value="si_veterano"
+                required
+              />
+              Sí, soy un jugador veterano
+            </label>
+            <label class="option-item">
+              <input type="radio" name="jugado_halo" value="si_casual" />
+              Sí, he jugado algunos títulos
+            </label>
+            <label class="option-item">
+              <input type="radio" name="jugado_halo" value="no" />
+              No, soy nuevo en el universo de Halo
+            </label>
+          </div>
+        </div>
+
+        <!-- Checklist (Checkboxes): Juegos jugados -->
+        <div class="form-group">
+          <label class="section-label"
+            >¿Qué juegos de la franquicia has completado o probado?</label
+          >
+          <div class="checklist-grid">
+            <label class="option-item">
+              <input type="checkbox" name="juegos[]" value="halo1" /> Halo:
+              Combat Evolved
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="juegos[]" value="halo2" /> Halo 2
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="juegos[]" value="halo3" /> Halo 3
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="juegos[]" value="odst" /> Halo 3:
+              ODST
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="juegos[]" value="reach" /> Halo:
+              Reach
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="juegos[]" value="halo4" /> Halo 4
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="juegos[]" value="halo5" /> Halo 5:
+              Guardians
+            </label>
+            <label class="option-item">
+              <input type="checkbox" name="juegos[]" value="infinite" /> Halo
+              Infinite
+            </label>
+          </div>
+        </div>
+
+        <!-- Select / Lista desplegable: Facción favorita -->
+        <div class="form-group">
+          <label for="faccion">Elige tu facción favorita:</label>
+          <select id="faccion" name="faccion">
+            <option value="unsc">UNSC / Spartans</option>
+            <option value="covenant">El Covenant</option>
+            <option value="elites">Sangheili (Elites Rebeldes)</option>
+            <option value="desterrados">Los Desterrados</option>
+            <option value="forerunners">Forerunners</option>
+          </select>
+        </div>
+
+        <!-- Textarea: Mensaje / Reseña -->
+        <div class="form-group">
+          <label for="comentarios"
+            >Comentarios o tu recuerdo favorito de Halo:</label
+          >
+          <textarea
+            id="comentarios"
+            name="comentarios"
+            rows="4"
+            placeholder="Escribe tu mensaje aquí..."
+          ></textarea>
+        </div>
+
+        <!-- Botón de Envío -->
+        <div class="card-button">
+          <button type="submit">Transmitir Datos</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-title">UNSC DATABASE SYSTEM</p>
+      <ul class="footer-links">
+        <li><a href="halo_reclutamiento.html">Registro de Reclutamiento</a></li>
+        <li><a href="creditos.html">Fuentes y Créditos</a></li>
+      </ul>
+      <p class="footer-copy">
+        &copy; 2026 Proyecto Académico - Halo Archives. Todos los derechos
+        reservados a sus respectivos autores.
+      </p>
+    </div>
+  </footer>
+</html>
