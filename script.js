@@ -17,9 +17,8 @@ function validarFormulario() {
   const cpTexto = document.getElementById("codigo_postal").value.trim();
   const comentarios = document.getElementById("comentarios").value.trim();
 
-  // =========================================================
   // 1. REQUISITO: Todos los campos de texto llenados
-  // =========================================================
+
   if (nombre === "") {
     errores.push('• El campo "Nombre / Gamertag" es obligatorio.');
   }
@@ -36,9 +35,7 @@ function validarFormulario() {
     errores.push('• El campo "Comentarios" es obligatorio.');
   }
 
-  // =========================================================
   // 2. REQUISITO: Formato de correo electrónico
-  // =========================================================
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (email !== "" && !regexEmail.test(email)) {
     errores.push(
@@ -46,9 +43,7 @@ function validarFormulario() {
     );
   }
 
-  // =========================================================
   // 3. REQUISITO: Conversión y comprobación numérica (Teléfono)
-  // =========================================================
   if (telefonoTexto !== "") {
     // Conversión a tipo numérico con Number()
     const telefonoNumero = Number(telefonoTexto);
@@ -61,9 +56,7 @@ function validarFormulario() {
     }
   }
 
-  // =========================================================
   // 4. REQUISITO: Conversión y comprobación numérica (Código Postal)
-  // =========================================================
   if (cpTexto !== "") {
     // Conversión a tipo numérico con Number()
     const cpNumero = Number(cpTexto);
@@ -76,9 +69,7 @@ function validarFormulario() {
     }
   }
 
-  // =========================================================
   // 5. REQUISITO: Validar Radio Button y Checkbox seleccionados
-  // =========================================================
   const radioSeleccionado = document.querySelector(
     'input[name="jugado_halo"]:checked',
   );
@@ -97,9 +88,7 @@ function validarFormulario() {
     );
   }
 
-  // =========================================================
   // 6. REQUISITO: Mostrar mensaje de alerta según resultado
-  // =========================================================
   if (errores.length > 0) {
     // Alerta de atención con la lista de campos que requieren corregirse
     const mensajeAlerta =
