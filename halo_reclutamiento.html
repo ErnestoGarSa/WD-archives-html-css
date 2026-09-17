@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <!-- Navbar idéntico a tus otras páginas -->
+    <!-- Navbar -->
     <nav class="navbar">
       <div class="nav-logo">
         <a href="index.html">HALO ARCHIVES</a>
@@ -26,7 +26,6 @@
         <li><a href="halo_5_guardians.html">Halo 5: Guardians</a></li>
         <li><a href="halo_infinite.html">Halo Infinite</a></li>
         <li><a href="halo_campaign_evolved.html">Halo Campaign Evolved</a></li>
-        <li><a href="halo_reclutamiento.html">Reclutamiento</a></li>
       </ul>
     </nav>
 
@@ -39,7 +38,14 @@
     <div class="card">
       <h3 class="card-title">Formulario de Reclutamiento</h3>
 
-      <form action="#" method="POST" class="form-container">
+      <!-- novalidate desactiva los globos por defecto de HTML5 para permitir el alert() de JS -->
+      <form
+        id="formReclutamiento"
+        action="#"
+        method="POST"
+        class="form-container"
+        novalidate
+      >
         <!-- Campo: Nombre / GamerTag -->
         <div class="form-group">
           <label for="nombre">Nombre completo / Gamertag:</label>
@@ -48,19 +54,39 @@
             id="nombre"
             name="nombre"
             placeholder="Ej. Chief_117"
-            required
           />
         </div>
 
-        <!-- Campo: Correo Electrónico -->
+        <!-- Campo: Correo Electrónico (tipo texto para validarlo por JS) -->
         <div class="form-group">
           <label for="email">Correo electrónico:</label>
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
             placeholder="usuario@unsc.com"
-            required
+          />
+        </div>
+
+        <!-- Campo: Teléfono (tipo texto) -->
+        <div class="form-group">
+          <label for="telefono">Número de teléfono:</label>
+          <input
+            type="text"
+            id="telefono"
+            name="telefono"
+            placeholder="1234567890"
+          />
+        </div>
+
+        <!-- Campo: Código Postal (tipo texto) -->
+        <div class="form-group">
+          <label for="codigo_postal">Código postal:</label>
+          <input
+            type="text"
+            id="codigo_postal"
+            name="codigo_postal"
+            placeholder="12345"
           />
         </div>
 
@@ -71,12 +97,7 @@
           >
           <div class="options-group">
             <label class="option-item">
-              <input
-                type="radio"
-                name="jugado_halo"
-                value="si_veterano"
-                required
-              />
+              <input type="radio" name="jugado_halo" value="si_veterano" />
               Sí, soy un jugador veterano
             </label>
             <label class="option-item">
@@ -97,33 +118,41 @@
           >
           <div class="checklist-grid">
             <label class="option-item">
-              <input type="checkbox" name="juegos[]" value="halo1" /> Halo:
+              <input type="checkbox" name="juegos" value="Halo CE" /> Halo:
               Combat Evolved
             </label>
             <label class="option-item">
-              <input type="checkbox" name="juegos[]" value="halo2" /> Halo 2
+              <input type="checkbox" name="juegos" value="Halo 2" /> Halo 2
             </label>
             <label class="option-item">
-              <input type="checkbox" name="juegos[]" value="halo3" /> Halo 3
+              <input type="checkbox" name="juegos" value="Halo 3" /> Halo 3
             </label>
             <label class="option-item">
-              <input type="checkbox" name="juegos[]" value="odst" /> Halo 3:
-              ODST
+              <input type="checkbox" name="juegos" value="Halo 3: ODST" /> Halo
+              3: ODST
             </label>
             <label class="option-item">
-              <input type="checkbox" name="juegos[]" value="reach" /> Halo:
+              <input type="checkbox" name="juegos" value="Halo Reach" /> Halo:
               Reach
             </label>
             <label class="option-item">
-              <input type="checkbox" name="juegos[]" value="halo4" /> Halo 4
+              <input type="checkbox" name="juegos" value="Halo 4" /> Halo 4
             </label>
             <label class="option-item">
-              <input type="checkbox" name="juegos[]" value="halo5" /> Halo 5:
+              <input type="checkbox" name="juegos" value="Halo 5" /> Halo 5:
               Guardians
             </label>
             <label class="option-item">
-              <input type="checkbox" name="juegos[]" value="infinite" /> Halo
+              <input type="checkbox" name="juegos" value="Halo Infinite" /> Halo
               Infinite
+            </label>
+            <label class="option-item">
+              <input
+                type="checkbox"
+                name="juegos"
+                value="Halo Campaign Evolved"
+              />
+              Halo Campaign Evolved
             </label>
           </div>
         </div>
@@ -132,15 +161,17 @@
         <div class="form-group">
           <label for="faccion">Elige tu facción favorita:</label>
           <select id="faccion" name="faccion">
-            <option value="unsc">UNSC / Spartans</option>
-            <option value="covenant">El Covenant</option>
-            <option value="elites">Sangheili (Elites Rebeldes)</option>
-            <option value="desterrados">Los Desterrados</option>
-            <option value="forerunners">Forerunners</option>
+            <option value="UNSC / Spartans">UNSC / Spartans</option>
+            <option value="El Covenant">El Covenant</option>
+            <option value="Sangheili (Elites Rebeldes)">
+              Sangheili (Elites Rebeldes)
+            </option>
+            <option value="Los Desterrados">Los Desterrados</option>
+            <option value="Forerunners">Forerunners</option>
           </select>
         </div>
 
-        <!-- Textarea: Mensaje / Reseña -->
+        <!-- Textarea: Mensaje -->
         <div class="form-group">
           <label for="comentarios"
             >Comentarios o tu recuerdo favorito de Halo:</label
@@ -159,18 +190,24 @@
         </div>
       </form>
     </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-title">UNSC DATABASE SYSTEM</p>
+        <ul class="footer-links">
+          <li>
+            <a href="halo_reclutamiento.html">Registro de Reclutamiento</a>
+          </li>
+          <li><a href="creditos.html">Fuentes y Créditos</a></li>
+        </ul>
+        <p class="footer-copy">
+          &copy; 2026 Proyecto Académico - Halo Archives. Todos los derechos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script de JavaScript vinculado -->
+    <script src="script.js"></script>
   </body>
-  <footer class="footer">
-    <div class="footer-content">
-      <p class="footer-title">UNSC DATABASE SYSTEM</p>
-      <ul class="footer-links">
-        <li><a href="halo_reclutamiento.html">Registro de Reclutamiento</a></li>
-        <li><a href="creditos.html">Fuentes y Créditos</a></li>
-      </ul>
-      <p class="footer-copy">
-        &copy; 2026 Proyecto Académico - Halo Archives. Todos los derechos
-        reservados a sus respectivos autores.
-      </p>
-    </div>
-  </footer>
 </html>
